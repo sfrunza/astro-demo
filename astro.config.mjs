@@ -14,6 +14,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  adapter: cloudflare({ imageService: 'cloudflare' }),
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   output: 'server',
 });
